@@ -13,7 +13,8 @@ MsgBox($MB_SYSTEMMODAL, "Find Window", "Found window at ("&$iLeftCorner&","&$iTo
 TestColorAt(0, 102, 50, X(747), Y(577), "Done Button")
 TestColorAt(192, 178, 156, X(343), Y(552), "Press X Dialog")
 TestColorAt(33, 32, 49, X(423), Y(516), "Press X Title Bar")
-TestColorAt(0, 214, 16, X(421), Y(387), "Backpack Full Button")
+TestColorAt(0, 214, 16, X(421), Y(387), "Bank Full Button")
+TestColorAt(25, 180, 37, X(421), Y(387), "Bank Full Button")
 
 Func TestColorAt($iR, $iG, $iB, $iX, $iY, $sLabel)
    MouseMove($iX, $iY, 10)

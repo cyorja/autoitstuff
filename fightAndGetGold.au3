@@ -23,7 +23,8 @@ While Not _IsPressed("1B")
 		 MouseMove(X(100), Y(100), 3)
    EndIf
    ; Click the Backpack full button if present
-   If SeeColorAt(0, 214, 16, X(421), Y(387)) Then
+   If SeeColorAt(0, 214, 16, X(421), Y(387)) Or _
+	  SeeColorAt(25, 180, 37, X(421), Y(387)) Then
 		 MouseClick($MOUSE_CLICK_LEFT, X(421), Y(387), 3)
 		 ; Move the mouse away from the button because it affects the color
 		 MouseMove(X(100), Y(100),3)
@@ -52,11 +53,6 @@ Func CollectTreasure()
 	  Send("{x}")
 	  ; Might popup that your backpack is full
 	  Sleep(200)
-	  While SeeColorAt(0, 214, 16, X(421), Y(387))
-		 MouseClick($MOUSE_CLICK_LEFT, X(421), Y(387), 3)
-		 ; Move the mouse away from the button because it affects the color
-		 MouseMove(X(100), Y(100),3)
-		 Sleep(200)
 	  WEnd
 EndFunc
 
