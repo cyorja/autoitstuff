@@ -44,4 +44,10 @@
 	  Return $iTopCorner+$iy
    EndFunc
 
+   Func SkipFindWindow($iSetX, $iSetY)
+	  Global $iLeftCorner=$iSetX
+	  Global $iTopCorner=$iSetY
+	  MouseClick($MOUSE_CLICK_LEFT, X(400), Y(-5), 1, 3)
+	  Sleep(200)
+   EndFunc
 

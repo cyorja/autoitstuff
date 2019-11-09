@@ -16,11 +16,13 @@ While Not _IsPressed("1B")
    ; second if we should open treasure chests
 
    CircleMouse();
+   ; Click the Done button at the bottom right of the battle if present
    If SeeColorAt(0, 102, 50, X(747), Y(577)) Then
 		 MouseClick($MOUSE_CLICK_LEFT, X(747), Y(577), 3)
 		 ; Move the mouse away from the button because it affects the color
 		 MouseMove(X(100), Y(100), 3)
    EndIf
+   ; Click the Backpack full button if present
    If SeeColorAt(0, 214, 16, X(421), Y(387)) Then
 		 MouseClick($MOUSE_CLICK_LEFT, X(421), Y(387), 3)
 		 ; Move the mouse away from the button because it affects the color
@@ -40,7 +42,10 @@ Func CircleMouse()
 EndFunc
 
 Func CanCollectTreasure()
-   Return SeeColorAt(192, 178, 156, X(343), Y(552)) And SeeColorAt(33, 32, 49, X(423), Y(516))
+   ; Look for the beige of the "Press X to Open" dialog's background and the
+   ; dark blue of the dialog's title bar
+   Return SeeColorAt(192, 178, 156, X(343), Y(552)) And _
+	  SeeColorAt(33, 32, 49, X(423), Y(516))
 EndFunc
 
 Func CollectTreasure()
